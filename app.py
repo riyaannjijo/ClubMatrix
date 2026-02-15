@@ -13,9 +13,9 @@ def get_db_connection():
     conn.row_factory = sqlite3.Row
     return conn
 
-
-# USERS TABLE
-    cursor.execute("""
+conn = sqlite3.connect('events.db')
+cursor = conn.cursor()
+cursor.execute("""
     CREATE TABLE IF NOT EXISTS users (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         username TEXT,
@@ -24,9 +24,7 @@ def get_db_connection():
         role TEXT
     )
     """)
-
-    # STUDENTS TABLE
-    cursor.execute("""
+cursor.execute("""
     CREATE TABLE IF NOT EXISTS students (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         user_id INTEGER,
@@ -41,7 +39,7 @@ def get_db_connection():
     """)
 
     # CLUBS TABLE
-    cursor.execute("""
+cursor.execute("""
     CREATE TABLE IF NOT EXISTS clubs (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         user_id INTEGER,
@@ -54,7 +52,7 @@ def get_db_connection():
     """)
 
     # EVENT TABLE
-    cursor.execute("""
+cursor.execute("""
     CREATE TABLE IF NOT EXISTS event (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         name TEXT,
@@ -75,8 +73,8 @@ def get_db_connection():
         club_id INTEGER
     )
     """)
-    conn.commit()
-    conn.close()
+conn.commit()
+conn.close()
 
 
 # -----------------------------
