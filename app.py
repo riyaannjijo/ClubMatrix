@@ -14,6 +14,71 @@ def get_db_connection():
     return conn
 
 
+# USERS TABLE
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS users (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        username TEXT,
+        email TEXT,
+        password TEXT,
+        role TEXT
+    )
+    """)
+
+    # STUDENTS TABLE
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS students (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        user_id INTEGER,
+        name TEXT,
+        course TEXT,
+        branch TEXT,
+        semester TEXT,
+        year TEXT,
+        admission_no TEXT,
+        reg_no TEXT
+    )
+    """)
+
+    # CLUBS TABLE
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS clubs (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        user_id INTEGER,
+        club_name TEXT,
+        description TEXT,
+        contact TEXT,
+        faculty TEXT,
+        established_year TEXT
+    )
+    """)
+
+    # EVENT TABLE
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS event (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        name TEXT,
+        club TEXT,
+        description TEXT,
+        date TEXT,
+        time TEXT,
+        mode TEXT,
+        venue TEXT,
+        platform TEXT,
+        is_paid TEXT,
+        payment_amount TEXT,
+        gpay_number TEXT,
+        participation_type TEXT,
+        activity_points TEXT,
+        contact_details TEXT,
+        qr_code_link TEXT,
+        club_id INTEGER
+    )
+    """)
+    conn.commit()
+    conn.close()
+
+
 # -----------------------------
 # Landing Page
 # -----------------------------
