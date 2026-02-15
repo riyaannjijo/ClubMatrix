@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Details - ClubMatrix</title>
+    <link href="https://fonts.cdnfonts.com/css/glacial-indifference-2" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Glacial Indifference', sans-serif;
+            background-color: #C6DA83;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .details-card {
+            background-color: white;
+            padding: 40px;
+            width: 400px;
+            border-radius: 18px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #5D7B3D;
+            border: none;
+            border-radius: 10px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="details-card">
+
+    <h2>Complete Student Profile</h2>
+
+    <form method="POST">
+        <input type="text" name="name" placeholder="Full Name" required>
+        <input type="text" name="course" placeholder="Course" required>
+        <input type="text" name="branch" placeholder="Branch" required>
+        <input type="text" name="semester" placeholder="Semester" required>
+        <input type="text" name="year" placeholder="Year" required>
+        <input type="text" name="admission_no" placeholder="Admission No" required>
+        <input type="text" name="reg_no" placeholder="Register No" required>
+
+        <button type="submit">Save Details</button>
+    </form>
+
+</div>
+
+</body>
+</html>

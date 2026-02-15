@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ClubMatrix - Student</title>
+
+    <link href="https://fonts.cdnfonts.com/css/glacial-indifference-2" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Glacial Indifference', sans-serif;
+            margin: 0;
+            background-color: #D58A9F; /* Candy */
+        }
+
+        
+
+        .container {
+            padding: 40px 60px;
+            color: black;
+        }
+
+        h2 {
+            color: #E4568B;
+            margin-bottom: 20px;
+        }
+
+        .card {
+            background-color: white;
+            color: black;
+            padding: 18px;
+            margin-bottom: 18px;
+            border-radius: 14px;
+            transition: 0.2s ease;
+        }
+
+        .card:hover {
+            transform: scale(1.02);
+            cursor: pointer;
+        }
+
+        a.card-link {
+            text-decoration: none;
+        }
+
+        hr {
+            margin: 40px 0;
+            border: none;
+            border-top: 1px solid white;
+            opacity: 0.4;
+        }
+
+        p {
+            color: white;
+        }
+        .card p {
+            color: black; /* Or #333 for a softer look */
+        }
+        .btn-back {
+    display: inline-block;
+    background-color: white;
+    color: black;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+    </style>
+</head>
+
+<body>
+
+<nav style="
+    background-color: #E4568B; 
+    padding: 12px 25px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    font-weight: bold;
+">
+
+    <a href="/student?tab=loading">Event Loading</a>
+    <a href="/student?tab=clubs">Club List</a>
+    <a href="/student?tab=profile">My Details</a>
+    <a href="/logout" style="margin-left:auto;">Logout</a>
+
+</nav>
+
+<div class="container">
+
+{% if tab == 'loading' %}
+    <h2>Today's Events</h2>
+    {% if today_events %}
+        {% for event in today_events %}
+            <a class="card-link"  href="/event/{{ event.id }}?from=loading">
+                <div class="card">
+                    <strong>{{ event.name }}</strong><br>
+                    {{ event.club }} | {{ event.time }}
+                </div>
+            </a> {% endfor %}
+    {% else %}
+        <p>No events today.</p>
+    {% endif %}
+
+    <hr>
+
+    <h2>Upcoming Events</h2>
+    {% if upcoming %}
+        {% for event in upcoming %}
+            <a class="card-link" href="/event/{{ event.id }}?from=loading">
+                <div class="card">
+                    <strong>{{ event.name }}</strong><br>
+                    {{ event.club }} | {{ event.date }} | {{ event.time }}
+                </div>
+            </a>
+        {% endfor %}
+    {% else %}
+        <p>No upcoming events.</p>
+    {% endif %}
+
+{% endif %} 
+{% if tab == 'clubs' %}
+    <h2>Club List</h2>
+    {% for club in clubs %}
+        <a class="card-link" href="/student/club/{{ club.id}}?from=clubs">
+            <div class="card">
+                {{ club.club }}
+            </div>
+        </a>
+    {% else %}
+        <p>No clubs available.</p>
+    {% endfor %}
+{% endif %}
+
+
+{% if tab == 'profile' %}
+    <div style="margin-bottom:20px;">
+        <a href="/student?tab=clubs" class="btn-back">← Back</a>
+    </div>
+
+    <h2>My Details</h2>
+    <div class="card">
+        <p><strong>Name:</strong> {{ student.name }}</p>
+        <p><strong>Course:</strong> {{ student.course }}</p>
+        <p><strong>Branch:</strong> {{ student.branch }}</p>
+        <p><strong>Semester:</strong> {{ student.semester }}</p>
+        <p><strong>Year:</strong> {{ student.year }}</p>
+        <p><strong>Admission No:</strong> {{ student.admission_no }}</p>
+        <p><strong>Register No:</strong> {{ student.reg_no }}</p>
+    </div>
+{% endif %}
+
+</div>
+
+</body>
+</html>

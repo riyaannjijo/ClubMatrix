@@ -1,0 +1,92 @@
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ClubMatrix</title>
+    <link href="https://fonts.cdnfonts.com/css/glacial-indifference-2" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Glacial Indifference', sans-serif;
+            margin: 0;
+            background-color: #D6E6FD;
+        }
+
+        header {
+            background-color: #4A4F87;
+            padding: 15px;
+            color: white;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        header a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .btn {
+            padding: 10px 15px;
+            background-color: #C6DA83;
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .navbar {
+    background-color: #4A4E8C;
+    padding: 15px ;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-left {
+    display: flex;
+    gap: 30px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+}
+
+.navbar a:hover {
+    opacity: 0.8;
+}
+
+.logout-btn {
+    font-weight: bold;
+}
+
+    </style>
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-left">
+        <a href="/club?tab=loading">Events Loading</a>
+        <a href="/club?tab=history">Event History</a>
+        <a href="/admin/add">Add Event</a>
+        <a href="/club?tab=details">Club Details</a>
+    </div>
+
+    <div class="nav-right">
+        <a href="/logout" class="logout-btn">Logout</a>
+    </div>
+</nav>
+
+
+<div class="content">
+    {% block content %}{% endblock %}
+</div>
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% if request.args.get('source') == 'club' %}
+    <a href="/club?tab={{ request.args.get('tab', 'loading') }}"
+       style="
+           display:inline-block;
+           margin-bottom:20px;
+           padding:8px 14px;
+           background:#4A4F87;
+           color:white;
+           border-radius:8px;
+           text-decoration:none;
+       ">
+        ← Back
+    </a>
+{% endif %}
+
+
+<h2 style="color:#4A4F87;">{{ event.name }}</h2>
+
+<div style="
+    background:#4A4F87;
+    padding:30px;
+    border-radius:15px;
+    color:white;
+    max-width:700px;
+">
+
+<p><strong>Club:</strong> {{ event.club }}</p>
+<p><strong>Date:</strong> {{ event.date }}</p>
+<p><strong>Time:</strong> {{ event.time }}</p>
+
+<p><strong>Description:</strong><br>
+{{ event.description }}
+</p>
+
+<p><strong>Mode:</strong> {{ event.mode }}</p>
+
+{% if event.mode == "Offline" %}
+<p><strong>Venue:</strong> {{ event.venue }}</p>
+{% else %}
+<p><strong>Platform:</strong> {{ event.platform }}</p>
+{% endif %}
+
+<p><strong>Free or Paid:</strong> {{ event.is_paid }}</p>
+
+{% if event.is_paid == "Paid" %}
+<p><strong>Amount:</strong> {{ event.payment_amount }}</p>
+<p><strong>GPay:</strong> {{ event.gpay_number }}</p>
+{% endif %}
+
+<p><strong>Participation Type:</strong> {{ event.participation_type }}</p>
+<p><strong>Activity Points:</strong> {{ event.activity_points }}</p>
+
+<p><strong>Contact:</strong> {{ event.contact_details }}</p>
+
+{% if event.qr_code_link %}
+<p><strong>QR Code:</strong></p>
+<img src="{{ event.qr_code_link }}" width="150">
+{% endif %}
+
+</div>
+
+{% endblock %}

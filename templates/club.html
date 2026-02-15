@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Club Dashboard</title>
+</head>
+<body>
+    <h2>Club Dashboard</h2>
+    <a href="/admin/add">+ Add Event</a>
+
+    <h3>All Events</h3>
+    {% for event in events %}
+        <p>{{ event.name }} - {{ event.date }}</p>
+    {% endfor %}
+</body>
+</html>

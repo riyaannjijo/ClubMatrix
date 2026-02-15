@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Club Details</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #C6DA83;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            width: 400px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #5D7B3D;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <h2>Enter Club Details</h2>
+
+    <form method="POST">
+        <input type="text" name="club_name" placeholder="Club Name" required>
+        <textarea name="description" placeholder="Description" required></textarea>
+        <input type="text" name="contact" placeholder="Contact Info" required>
+        <input type="text" name="faculty" placeholder="Faculty Coordinator" required>
+        <input type="text" name="established_year" placeholder="Established Year" required>
+
+        <button type="submit">Save Details</button>
+    </form>
+</div>
+
+</body>
+</html>

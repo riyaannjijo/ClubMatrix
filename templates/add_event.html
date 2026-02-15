@@ -1,0 +1,109 @@
+
+
+
+{% extends "base.html" %}
+
+{% block content %}
+
+<a href="/club?tab=loading"
+   style="
+       display:inline-block;
+       margin-bottom:20px;
+       padding:8px 14px;
+       background:#4A4F87;
+       color:white;
+       border-radius:8px;
+       text-decoration:none;
+   ">
+    ← Back to Dashboard
+</a>
+
+
+<h2 style="color:#4A4F87;">Add New Event</h2>
+
+<div style="
+    background:#4A4F87;
+    padding:40px;
+    border-radius:16px;
+    max-width:600px;
+    margin-top:20px;
+">
+
+<form method="POST" style="display:flex; flex-direction:column; gap:15px;">
+
+
+<label>Event Name</label>
+<input type="text" name="name" required>
+
+<label>Club Name</label>
+<input type="text" name="club" required>
+
+<label>Description</label>
+<textarea name="description" rows="3"></textarea>
+
+<label>Date</label>
+<input type="date" name="date" required>
+
+<label>Time</label>
+<input type="time" name="time" required>
+
+<label>Mode</label>
+<select name="mode">
+    <option value="Offline">Offline</option>
+    <option value="Online">Online</option>
+</select>
+
+<label>Venue (if Offline)</label>
+<input type="text" name="venue">
+
+<label>Platform (if Online)</label>
+<input type="text" name="platform">
+
+<label>Free or Paid</label>
+<select name="is_paid">
+    <option value="Free">Free</option>
+    <option value="Paid">Paid</option>
+</select>
+
+<label>Payment Amount (if Paid)</label>
+<input type="text" name="payment_amount">
+
+<label>GPay Number (if Paid)</label>
+<input type="text" name="gpay_number">
+
+<label>Participation Type</label>
+<select name="participation_type">
+    <option value="Duty Leave">Duty Leave</option>
+    <option value="Attendance">Attendance</option>
+    <option value="None">None</option>
+</select>
+
+<label>Activity Points</label>
+<input type="number" name="activity_points">
+
+<label>Contact Details</label>
+<input type="text" name="contact_details">
+
+<label>QR Code Link</label>
+<input type="text" name="qr_code_link">
+
+
+
+    <button type="submit" style="
+        background:#D6E6FD;
+        color:#4A4F87;
+        padding:12px;
+        border:none;
+        border-radius:10px;
+        font-weight:bold;
+        cursor:pointer;
+        margin-top:10px;
+    ">
+        Add Event
+    </button>
+
+</form>
+
+</div>
+
+{% endblock %}
