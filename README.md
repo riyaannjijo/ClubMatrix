@@ -78,7 +78,7 @@ python app.py
 
 #### Screenshots (Add at least 3)
 
-![Login Page](static/images/img1.png)
+![Login Page](static\images\img1.png)
 *Login page with role selection for Students and Clubs*
 
 ![Student Dashboard](screenshots/student_dashboard.png)
