@@ -1,6 +1,6 @@
-<p align="center">
-  <img src="./img.png" alt="ClubMatrix Banner" width="100%">
-</p>
+[![img.png](https://i.postimg.cc/wMtXMCQY/img.png)](https://postimg.cc/JHLDddFp)
+*Tink-Her-Hack*
+
 
 # ClubMatrix 🎯
 
@@ -78,17 +78,32 @@ python app.py
 
 #### Screenshots (Add at least 3)
 
-![Login Page](static\images\img1.png)
+[![img1.png](https://i.postimg.cc/zfJG0TMr/img1.png)](https://postimg.cc/QFyDMKh4)
 *Login page with role selection for Students and Clubs*
 
-![Student Dashboard](screenshots/student_dashboard.png)
-*Student dashboard showing categorized events - Today, Upcoming, and Past events with filtering options*
+[![img2.png](https://i.postimg.cc/3rymXHmV/img2.png)](https://postimg.cc/xq2XQhs3)
+*Student dashboard showing categorized events - Today, Upcoming events with filtering options*
 
-![Club Dashboard](screenshots/club_dashboard.png)
+[![img4.png](https://i.postimg.cc/RV73dCFD/img4.png)](https://postimg.cc/tYgCCjF3)
+*list of clubs in the college*
+
+[![img3.png](https://i.postimg.cc/mgK0r43G/img3.png)](https://postimg.cc/zySdd9Pd)
+*event details from student view*
+
+[![img6.png](https://i.postimg.cc/XJ93WJTW/img6.png)](https://postimg.cc/G836JcLg)
+*Signup page with role selection for Students and Clubs*
+
+[![img10.png](https://i.postimg.cc/25ZNdyjW/img10.png)](https://postimg.cc/cK0z0sn1)
 *Club-specific dashboard displaying event management interface with create/edit capabilities*
 
-![Add Event Form](screenshots/add_event.png)
+[![img7.png](https://i.postimg.cc/CLhYyw7m/img7.png)](https://postimg.cc/0rBhDRLw)
 *Event creation form with fields for event name, description, date, time, and location*
+
+[![img12.png](https://i.postimg.cc/02ygWc29/img12.png)](https://postimg.cc/8s9nsd6Y)
+event history(past events)
+
+[![img11.png](https://i.postimg.cc/WbWBQgh6/img11.png)](https://postimg.cc/LnPQPqkn)
+*event details from club view*
 
 #### Diagrams
 
@@ -161,9 +176,6 @@ Club Flow:
 
 ---
 
-## Additional Documentation
-
-### For Web Projects with Backend:
 
 #### API Documentation
 
@@ -172,7 +184,7 @@ Club Flow:
 ##### Endpoints
 
 **GET /**
-- **Description:** Landing page with role selection
+- **Description:** Login/Signup page with role selection
 - **Parameters:** None
 - **Response:** HTML page with Student/Club login options
 
@@ -301,7 +313,7 @@ CREATE TABLE events (
 ## Project Demo
 
 ### Video
-[Add your demo video link here - YouTube, Google Drive, etc.]
+[[Add your demo video link here - YouTube, Google Drive, etc.]](https://drive.google.com/file/d/1B-23R5kdEBjpldhwlM5dEXyUNxbGks4S/view?usp=drive_link)
 
 *The video demonstrates:*
 - User registration flow for both students and clubs
@@ -321,7 +333,7 @@ CREATE TABLE events (
 
 ## AI Tools Used (Optional - For Transparency Bonus)
 
-**Tool Used:** ChatGPT / Claude
+**Tool Used:** ChatGPT / Claude/GEmimi
 
 **Purpose:** Development assistance and debugging
 - Debugging SQLite connection issues
@@ -336,7 +348,6 @@ CREATE TABLE events (
 - "Best practices for deploying Flask app on Render with gunicorn"
 - "Implement secure password hashing with werkzeug"
 
-**Percentage of AI-generated code:** Approximately 15-20%
 
 **Human Contributions:**
 - Complete system architecture and design
